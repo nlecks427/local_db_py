@@ -2,7 +2,7 @@
 version: '3'
 services:
   database:
-    container_name: "local_db"
+    container_name: "local_db_py"
     restart: "always"
     image: "postgres" # use latest official postgres version
     env_file:
@@ -16,6 +16,14 @@ services:
         target: /data/my_table.csv
     ports: 
       - 5432:5432
+  python_env:
+    build: .
+    container_name: "python_env"
+    restart: "always"
+    ports:
+      - 8000:8000
+    
+
 volumes:
   database-data: # named volumes can be managed easier using docker-compose
 
