@@ -4,6 +4,7 @@ Creates a containerized postgres database with dummy data
 
 ### Steps
 
+##### Postgres Container
 Install docker desktop https://docs.docker.com/desktop/
 
 Clone the repo and do the following:
@@ -29,4 +30,22 @@ select * from public.my_table;
  column a | column b | column c
  column a | column b | column c
 (4 rows)
+```
+
+##### Python Container
+To install virtual env locally
+```
+pip install pyenv
+pip install pipnev
+pyenv install 3.7.3
+pyenv local 3.7.3
+pyenv shell 3.7.3
+pipenv shell
+pipenv install
+```
+
+To use the python container
+```
+docker exec -it local_db_py bash
+python
 ```
